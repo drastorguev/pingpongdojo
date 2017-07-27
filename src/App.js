@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 const stages = [{matches:[{
-  players: ["Darren", "Maneul"]
+  players: ["👻 Darren", "🤖 Manuel"]
 },{
-  players: ["Dmitry", "Smith"]
+  players: ["💩 Dmitry", "🎃 Smith"]
 }]}]
 
 
@@ -47,7 +47,6 @@ class App extends Component {
 
   addWinner(index) {
     return (winner) => {
-      console.log(this.state.stages)
       if(!this.state.stages[index + 1]) {
         this.state.stages.push({
             matches:[{
@@ -88,9 +87,10 @@ class Player extends Component {
         color: "#fff",
         backgroundColor: "#00c1ad",
         minWidth: "200px",
-        margin: "10px"
+        margin: "10px",
+        padding: "10px"
       }}>
-        {this.props.player}
+        {this.props.player} &nbsp;&nbsp;
         {<input disabled={!this.props.currentlyPlaying} value={this.props.score} type="number" onChange={this.props.onChange} />}
       </div>
     );
